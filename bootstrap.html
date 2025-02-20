@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <title>Boostrap | Stats Preview Card Component</title>
+  <title>Bootstrap | Stats Preview Card Component</title>
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <!-- Google Fonts: Inter y Lexend Deca -->
@@ -16,7 +15,7 @@
       background-color: hsl(233, 47%, 7%);
       color: hsl(0, 0%, 100%);
       font-family: 'Inter', sans-serif;
-      font-size: 15px;
+      font-size: 15px; 
       line-height: 1.6;
       margin: 0;
       padding: 0;
@@ -27,19 +26,23 @@
       flex-direction: column;
     }
     .card {
-      background-color: hsl(244, 38%, 16%);
-      border-radius: 20px;
+      background-color: hsl(244, 38%, 16%); 
+      border-radius: 10px;
       overflow: hidden;
-      max-width: 1110px;
-      margin: 40px;
+      max-width: 1110px; 
+      margin: 20px;
     }
     .image-container {
       position: relative;
+      background-color: hsl(277, 64%, 61%); 
+      line-height: 0; 
     }
     .image-container img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      opacity: 0.5; 
+      display: block; 
     }
     .overlay {
       position: absolute;
@@ -47,50 +50,52 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: hsla(277, 64%, 61%, 0.5);
+      background-color: hsla(277, 64%, 61%, 0.5); 
     }
     .card-body {
-      padding: 60px;
-      text-align: center;
+      padding: 40px 20px; /* Ajuste de padding para móvil */
+      text-align: center; /* Centrar el contenido en móvil */
     }
     @media (min-width: 768px) {
       .card-body {
-        text-align: left;
+        text-align: left; /* Alinear a la izquierda en desktop */
+        padding: 60px; /* Padding para desktop */
       }
     }
     .card-title {
-      font-size: 2rem;
+      font-size: 2rem; 
       font-weight: 700;
-      margin-bottom: 1rem;
+      color: hsl(0, 0%, 100%); 
+      margin-bottom: 1rem; 
     }
     .card-title span {
-      color: hsl(277, 64%, 61%);
+      color: hsl(277, 64%, 61%); /* Color de acento para la palabra "insights" */
     }
     .card-text {
-      color: hsla(0, 0%, 100%, 0.75);
-      margin-bottom: 2rem;
+      color: hsla(0, 0%, 100%, 0.75); /* Texto ligeramente transparente */
+      margin-bottom: 2rem; /* Margen inferior de 2rem */
     }
     .stats {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+      flex-direction: column; /* Estadísticas en columna en móvil */
+      align-items: center; /* Centrar estadísticas en móvil */
+      gap: 1rem; 
     }
     @media (min-width: 768px) {
       .stats {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: flex-start; 
       }
     }
     .stat {
       font-size: 1.5rem;
       font-weight: 700;
       color: hsl(0, 0%, 100%);
-      margin-bottom: 0.25rem;
+      margin-bottom: 0.25rem; 
     }
     .stat-label {
-      color: hsla(0, 0%, 100%, 0.6);
+      color: hsla(0, 0%, 100%, 0.6); 
       text-transform: uppercase;
       font-size: 12px;
       font-family: 'Lexend Deca', sans-serif;
@@ -108,53 +113,52 @@
 </head>
 <body>
 
-  <main class="card">
+  <div class="card">
     <div class="row no-gutters">
-      <figure class="col-md-6 order-md-2 order-1 image-container">
+      <div class="col-md-6 order-md-2 order-1 image-container">
         <picture>
+          <!-- Imagen para mobile -->
           <source media="(max-width: 767px)" srcset="./images/image-header-mobile.jpg">
+          <!-- Imagen para desktop -->
           <source media="(min-width: 768px)" srcset="./images/image-header-desktop.jpg">
-          <img src="./images/image-header-desktop.jpg" alt="Stats Image">
+          <!-- Imagen por defecto -->
+          <img src="./images/image-header-desktop.jpg" alt="Stats Image" class="object-cover h-full w-full">
         </picture>
         <div class="overlay"></div>
-        <figcaption class="sr-only">Illustration representing data analytics</figcaption>
-      </figure>
-
-      <section class="col-md-6 order-md-1 order-2">
+      </div>
+      <!-- Columna del contenido (abajo en móvil) -->
+      <div class="col-md-6 order-md-1 order-2">
         <div class="card-body">
-          <header>
-            <h1 class="card-title">
-              Get <span>insights</span> that help your business grow.
-            </h1>
-          </header>
+          <h1 class="card-title">Get <span>insights</span> that help your business grow.</h1>
           <p class="card-text">
             Discover the benefits of data analytics and make better decisions regarding revenue, customer
             experience, and overall efficiency.
           </p>
-          
-          <section class="stats">
-            <article>
-              <p class="stat">10k+</p>
-              <p class="stat-label">companies</p>
-            </article>
-            <article>
-              <p class="stat">314</p>
-              <p class="stat-label">templates</p>
-            </article>
-            <article>
-              <p class="stat">12M+</p>
-              <p class="stat-label">queries</p>
-            </article>
-          </section>
+          <!-- Estadísticas -->
+          <div class="stats">
+            <div>
+              <div class="stat">10k+</div>
+              <div class="stat-label">companies</div>
+            </div>
+            <div>
+              <div class="stat">314</div>
+              <div class="stat-label">templates</div>
+            </div>
+            <div>
+              <div class="stat">12M+</div>
+              <div class="stat-label">queries</div>
+            </div>
+          </div>
         </div>
-      </section>
+      </div>
     </div>
-  </main>
+  </div>
 
-  <footer class="attribution">
-    Coded by <span>Julian Andres Pedraza Padilla</span>
-  </footer>
+  <div class="attribution">
+    Coded by <a href="#">Julian Andres Pedraza Padilla</a>.
+  </div>
 
+  <!-- Bootstrap JS y dependencias -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
