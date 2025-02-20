@@ -2,31 +2,80 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Tailwind | Stats Preview Card Component</title>
   
-  <title>Tailwind | Stats preview card component</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <!-- Google Fonts: Inter y Lexend Deca -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca:wght@400&display=swap" rel="stylesheet">
+
+  <!-- Estilos personalizados -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: hsl(233, 47%, 7%);
+      color: hsl(0, 0%, 100%);
+      font-size: 15px;
+    }
+    .lexend-deca {
+      font-family: 'Lexend Deca', sans-serif;
+    }
   </style>
 </head>
-<body>
+<body class="flex flex-col items-center justify-center min-h-screen px-3 md:px-5 py-5">
+  
+  <!-- Contenedor principal -->
+  <main class="bg-[hsl(244,38%,16%)] rounded-lg overflow-hidden max-w-5xl flex flex-col md:flex-row shadow-lg">
+    
+    <!-- Imagen con overlay -->
+    <figure class="relative md:w-1/2 order-1 md:order-2">
+      <picture>
+        <source media="(max-width: 767px)" srcset="./images/image-header-mobile.jpg">
+        <source media="(min-width: 768px)" srcset="./images/image-header-desktop.jpg">
+        <img src="./images/image-header-desktop.jpg" alt="Illustration representing data analytics" class="object-cover h-full w-full">
+      </picture>
+      <div class="absolute inset-0 bg-[hsla(277,64%,61%,0.5)]"></div>
+      <figcaption class="sr-only">Illustration representing data analytics</figcaption>
+    </figure>
 
-  Get insights that help your business grow.
+    <!-- Contenido -->
+    <section class="p-6 md:p-10 md:w-1/2 order-2 md:order-1 text-center md:text-left">
+      <header>
+        <h1 class="text-2xl md:text-3xl font-bold mb-3 leading-tight">
+          Get <span class="text-[hsl(277,64%,61%)]">insights</span> that help your business grow.
+        </h1>
+      </header>
 
-  Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-  experience, and overall efficiency.
+      <p class="text-[hsla(0,0%,100%,0.75)] text-sm md:text-base mb-6">
+        Discover the benefits of data analytics and make better decisions regarding revenue, customer
+        experience, and overall efficiency.
+      </p>
 
-  10k+ companies
-  314 templates
-  12m+ queries
+      <!-- Estadísticas -->
+      <section class="flex flex-col md:flex-row justify-between gap-6">
+        <article class="text-center md:text-left">
+          <p class="text-xl md:text-2xl font-bold">10k+</p>
+          <p class="text-[hsla(0,0%,100%,0.6)] lexend-deca text-xs uppercase">companies</p>
+        </article>
+        <article class="text-center md:text-left">
+          <p class="text-xl md:text-2xl font-bold">314</p>
+          <p class="text-[hsla(0,0%,100%,0.6)] lexend-deca text-xs uppercase">templates</p>
+        </article>
+        <article class="text-center md:text-left">
+          <p class="text-xl md:text-2xl font-bold">12M+</p>
+          <p class="text-[hsla(0,0%,100%,0.6)] lexend-deca text-xs uppercase">queries</p>
+        </article>
+      </section>
+    </section>
+  </main>
 
-  <div class="attribution">
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+  <!-- Pie de página -->
+  <footer class="text-[hsla(0,0%,100%,0.6)] text-sm mt-6">
+    Coded by <span class="text-[hsl(228,45%,44%)]">Julian Andres Pedraza Padilla</span>
+  </footer>
+
 </body>
 </html>
